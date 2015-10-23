@@ -71,6 +71,7 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 
 ## Below are the steps implemeted in ```run_analysis.R``` script for achieving the above transformations:
 
+* Load the dplyr package.
 * Read the feature and activity names.
 * Read the test and train feature data sets.
 * Assign the variable/column names of test and train feature data sets with feature names.
@@ -87,3 +88,6 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 * Group the data obtained from previous step by subject and activity.
 * Take the mean of feature data fields using summarize_each
 * Arrange the data set in ascending order of subject and activity name.
+* Write the tidy data set to a file without row names.
+
+__Note: ```run_analysis.R``` script depends on dplyr package and is installed automatically if not available in your local machine__
