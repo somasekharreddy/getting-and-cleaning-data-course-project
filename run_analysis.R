@@ -19,19 +19,19 @@ if (!file.exists("UCI HAR Dataset")){
 }
 
 # Extracting feature names from features data set
-feature_list <- read.table("./UCI HAR Dataset/features.txt", header = FALSE, colClasses = c("integer","character"))[,2]
+feature_names <- read.table("./UCI HAR Dataset/features.txt", header = FALSE, colClasses = c("integer","character"))[,2]
 # Extracting activity names from activity labels data set
 activity_names <- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE, colClasses = c("integer","character"))[,2]
 
 # Extracting the values of every feature from test data set
 x_test <- read.table("./UCI HAR Dataset/test/X_test.txt", header = FALSE)
-# Setting the variable/Column names of feature data frame
-names(x_test) <- feature_list
+# Setting the variable/Column names of test feature data frame
+names(x_test) <- feature_names
 
 # Extracting the values of every feature from training data set
 x_train <- read.table("./UCI HAR Dataset/train/X_train.txt", header = FALSE)
-# Setting the variable/Column names of feature data frame
-names(x_train) <- feature_list
+# Setting the variable/Column names of train feature data frame
+names(x_train) <- feature_names
 
 # Removing the duplicate variables/columns in feature data frame from test data set
 x_test <- x_test[,!duplicated(colnames(x_test))]
@@ -51,12 +51,14 @@ y_test <- read.table("./UCI HAR Dataset/test/y_test.txt", header = FALSE)
 # Extracting the activities performed from training data set
 y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", header = FALSE)
 
-# Creating a dataframe with activity id and activity name of test data set
+# Mutating a dataframe with activity names in test data set
 y_test[,2] = activity_names[y_test[,1]]
+# Setting the variable/Column names of test activity data frame
 names(y_test) = c("activity_id", "activity_name")
 
-# Creating a dataframe with activity id and activity name of training data set
+# Mutating a dataframe with activity names in training data set
 y_train[,2] = activity_names[y_train[,1]]
+# Setting the variable/Column names of train activity data frame
 names(y_train) = c("activity_id", "activity_name")
 
 # Extracting the subject who performed the activity for each window sample of test data set
