@@ -14,10 +14,10 @@ This script is to prepare an independent tidy data set with average of each vari
 ## Steps to work on this course project
 
 1. Download the data available at following link ```https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip```.
-2. Extract the zip file into a R working directory on your local drive. Once the zip file is extracted, You will have a ```UCI HAR Dataset``` folder.
+2. Extract the zip file into R working directory on your local drive. Once the zip file is extracted, You will have a ```UCI HAR Dataset``` folder.
 3. Place the ```run_analysis.R``` script in R working directory, where the ```UCI HAR Dataset folder``` is also available.
 4. Open R Console or RStudio.
-5. Execute ```source("run_analysis.R")``` on R Console or RStudio; It will generate a new file tidy_data.txt in your working directory.
+5. Execute ```source("run_analysis.R")``` on R Console or RStudio; It will generate a new file ```tidy_data.txt``` in your working directory.
 
 ## Dependencies
 
